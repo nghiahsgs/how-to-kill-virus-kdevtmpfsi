@@ -21,3 +21,7 @@ echo "kinsing is fine now" > /var/tmp/kinsing
 chattr +i /tmp/kdevtmpfsi
 chattr +i /var/tmp/kinsing
 ```
+
+
+xem chi tiet process do lam gi
+systemctl status idProcess
