@@ -29,8 +29,20 @@ systemctl status idProcess
 ```
 ## Bước 4: Ngăn con virus quay trở lại
 Con virus này rất khôn, nó cài auto curl để tự cài lại, vì thế, mình mở crontab (trình quản lý cron job mặc định của linux) , mở ra và xóa hết cron của con virus đi.
+
++ Mở crontab của ubuntu và xóa cái cái curl của nó đi
 ```
 sudo su -c "crontab -e" www-data -s /bin/bash
 ```
++ Mở crontab của centos và xóa cái cái curl của nó đi
+ ```
+ # Liệt kê tất cả các crontab của tất cả các user
+for user in $(cut -f1 -d: /etc/passwd); do echo $user; crontab -u $user -l; done
+ 
+ # Liệt kê tất cả các crontab của user apache
+crontab -u apache -l
+ # Chỉnh sửa crontab của user apache
+crontab -u apache -e
+ ```
 
 ## Bước 5: reboot
