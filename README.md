@@ -23,5 +23,14 @@ chattr +i /var/tmp/kinsing
 ```
 
 
-xem chi tiet process do lam gi
+Vọc xem chi tiết con đó làm gì
+```
 systemctl status idProcess
+```
+## Bước 4: Ngăn con virus quay trở lại
+Con virus này rất khôn, nó cài auto curl để tự cài lại, vì thế, mình mở crontab (trình quản lý cron job mặc định của linux) , mở ra và xóa hết cron của con virus đi.
+```
+sudo su -c "crontab -e" www-data -s /bin/bash
+```
+
+## Bước 5: reboot
