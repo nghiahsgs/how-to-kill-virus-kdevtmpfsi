@@ -14,12 +14,15 @@ touch /tmp/kdevtmpfsi
 echo "kdevtmpfsi is fine now" > /tmp/kdevtmpfsi
 touch /var/tmp/kinsing
 echo "kinsing is fine now" > /var/tmp/kinsing
+touch /tmp/kinsing
+echo "kinsing is fine now" > /tmp/kinsing
 ```
 
 ## Bước 3: Cấp quyền chỉ cho đọc 2 file đó
 ```
 chattr +i /tmp/kdevtmpfsi
 chattr +i /var/tmp/kinsing
+chattr +i /tmp/kinsing
 ```
 
 
