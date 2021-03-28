@@ -48,4 +48,9 @@ crontab -u apache -l
 crontab -u apache -e
  ```
 
+Nếu nó vẫn quay lại thì thử hard core hơn đó là không cho phép www-data ghi vào crontab
+```
+touch /var/spool/cron/crontabs/www-data;
+chmod 0 /var/spool/cron/crontabs/www-data;
+```
 ## Bước 5: reboot
