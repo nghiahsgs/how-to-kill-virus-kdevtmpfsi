@@ -18,24 +18,29 @@ def read_file(file_name):
     f.close()
     return ndung
 
+def replace_space(ndung):
+    ndung = ndung.replace("    "," ")
+    ndung = ndung.replace("   "," ")
+    ndung = ndung.replace("  "," ")
+    return ndung
 while True:
     # username = 'www-data'
     username = 'apache'
     os.system("ps -aux | grep kdevtmpfsi >a.txt")
     ndung = read_file('a.txt')
-    ndung = ndung.replace("  "," ")
+    ndung = replace_space(ndung)
     id_process = regex_one_value('%s ([0-9]+) '%username,ndung)
     os.system('kill -9 %s'%id_process)
 
     os.system("ps -aux | grep kinsing >a.txt")
     ndung = read_file('a.txt')
-    ndung = ndung.replace("  "," ")
+    ndung = replace_space(ndung)
     id_process = regex_one_value('%s ([0-9]+) '%username,ndung)
     os.system('kill -9 %s'%id_process)
 
     os.system("ps -aux | grep kthreaddi >a.txt")
     ndung = read_file('a.txt')
-    ndung = ndung.replace("  "," ")
+    ndung = replace_space(ndung)
     id_process = regex_one_value('%s ([0-9]+) '%username,ndung)
     os.system('kill -9 %s'%id_process)
 
