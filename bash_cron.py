@@ -48,5 +48,5 @@ while True:
     os.system("rm -rf /tmp/kdevtmpfsi*")
     os.system("rm -rf /tmp/kinsing*")
     
-    time.sleep(30*60) #sleep 30p
+    time.sleep(15*60) #sleep 30p
 
