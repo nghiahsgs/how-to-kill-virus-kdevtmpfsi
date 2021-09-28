@@ -54,3 +54,20 @@ touch /var/spool/cron/crontabs/www-data;
 chmod 0 /var/spool/cron/crontabs/www-data;
 ```
 ## Bước 5: reboot
+
+
+
+
+# CENTOS
+## How to kill virus 'kthreaddi' in centos
+```
+#/root/scripts/ctKillProc.sh
+#!/bin/sh
+while true; do
+processId=$(pgrep 'kthreaddi')
+kill -9 $processId
+echo $processId
+sleep 20
+done
+exit 1
+```
